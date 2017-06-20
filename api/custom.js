@@ -51,6 +51,7 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
 
 
 
+// Sidebar
 
 var randNum = function () {
     return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
@@ -4939,6 +4940,7 @@ $(document).ready(function () {
 
     init_sparklines();
     init_flot_chart();
+    //init_sidebar();
     init_wysiwyg();
     init_InputMask();
     init_JQVmap();

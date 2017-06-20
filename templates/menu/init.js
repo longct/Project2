@@ -1,6 +1,12 @@
-﻿// Sidebar
-
-init_sidebar();
+﻿var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
+    $BODY = $('body'),
+    $MENU_TOGGLE = $('#menu_toggle'),
+    $SIDEBAR_MENU = $('#sidebar-menu'),
+    $SIDEBAR_FOOTER = $('.sidebar-footer'),
+    $LEFT_COL = $('.left_col'),
+    $RIGHT_COL = $('.right_col'),
+    $NAV_MENU = $('.nav_menu'),
+    $FOOTER = $('footer');
 function init_sidebar() {
     // TODO: This is some kind of easy fix, maybe we can improve this
     var setContentHeight = function () {
@@ -19,8 +25,6 @@ function init_sidebar() {
     };
 
     $SIDEBAR_MENU.find('a').on('click', function (ev) {
-
-        console.log('clicked - sidebar_menu');
         var $li = $(this).parent();
 
         if ($li.is('.active')) {
@@ -44,6 +48,10 @@ function init_sidebar() {
             $('ul:first', $li).slideDown(function () {
                 setContentHeight();
             });
+            if ($(this).data("value") != undefined) {
+                var linkMod = $(this).data("value");
+
+            }
         }
     });
 
@@ -92,3 +100,6 @@ function init_sidebar() {
     }
 };
 // /Sidebar
+$(document).ready(function () {
+    init_sidebar();
+});
