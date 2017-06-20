@@ -231,6 +231,7 @@ w3.includeHTML = function (cb) {
     var z, i, elmnt, elmntjs, elmntcss, file, filejs, filecss, xhttp, xhttpjs, xhttpcss;
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
+
         elmnt = z[i];
         elmntjs = z[i];
         elmntcss = z[i];
@@ -250,7 +251,7 @@ w3.includeHTML = function (cb) {
 
             });
 
-            elmntcss.removeAttribute("w3-include-html");            
+            elmnt.removeAttribute("w3-include-html");
             return;
         }
     }

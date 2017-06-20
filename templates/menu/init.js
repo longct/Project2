@@ -50,6 +50,7 @@ function init_sidebar() {
             });
             if ($(this).data("value") != undefined) {
                 var linkMod = $(this).data("value");
+                menuClick(linkMod, null);
 
             }
         }
